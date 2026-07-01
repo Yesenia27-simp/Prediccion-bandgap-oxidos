@@ -1,0 +1,33 @@
+{
+  "nombre": "Estudiante de IA Nano",
+  "fecha": "2026-06-12",
+  "titulo": "Predicción de band gap en óxidos metálicos mediante Machine Learning para aplicaciones en celdas solares",
+  "pregunta_de_investigacion": "¿Es posible predecir con alta precisión el band gap de óxidos metálicos para celdas solares utilizando descriptores atómicos simples y modelos de ensamble sin recurrir a costosos cálculos DFT?",
+  "justificacion": "El band gap es una propiedad crítica que determina la eficiencia de los materiales absorbentes de luz en celdas solares. Calcularlo mediante simulación DFT de alto nivel requiere un costo computacional inmenso. El uso de Machine Learning entrenado con datos atómicos permite realizar un screening masivo de materiales candidatos de forma instantánea, acelerando el descubrimiento de materiales fotovoltaicos eficientes.",
+  "dominio": "A",
+  "fuente_de_datos": "Materials Project API (datos reales de óxidos metálicos y sus band gaps calculados) combinado con descriptores de composición atómica generados por pymatgen.",
+  "n_muestras_estimado": 500,
+  "herramientas_a_usar": {
+    "U1_modelado_atomistico": true,
+    "U2_simulacion_MD_DFT": false,
+    "U3_ml_clasico": true,
+    "U3_redes_neuronales": true,
+    "U4_llms_generativa": false,
+    "U4_analisis_datos_exp": false,
+    "U5_agentes_langchain": true,
+    "U5_multiagente_crewai": false,
+    "U5_rag_memoria": true,
+    "U6_api_fastapi": true
+  },
+  "pasos_del_proyecto": [
+    "1. Extracción de datos de bandgap y estructuras de óxidos de Materials Project API.",
+    "2. Extracción de descriptores químicos y cristalográficos (electronegatividad, densidad, número de coordinación) usando pymatgen.",
+    "3. Preprocesamiento de datos y análisis exploratorio (EDA) para identificar correlaciones clave.",
+    "4. Entrenamiento y validación cruzada de modelos clásicos (Random Forest, GBR) y redes neuronales densas (MLP).",
+    "5. Optimización de hiperparámetros y evaluación en test utilizando métricas como MSE y R².",
+    "6. Despliegue del mejor modelo mediante una API en FastAPI para predicciones en tiempo real."
+  ],
+  "resultado_principal": "Un pipeline completo en Python que incluye: un modelo predictivo validado y optimizado de bandgap, una API REST de consulta en FastAPI y un módulo de screening automatizado.",
+  "metrica_de_exito": "Alcanzar un coeficiente de determinación R² > 0.85 y un error absoluto medio (MAE) < 0.25 eV en el conjunto de prueba independiente.",
+  "riesgo_principal": "Falta de representatividad o desbalance en los datos del Materials Project para ciertos metales raros. Mitigación: Aplicar técnicas de aumento de datos sintéticos o regularización en el entrenamiento del modelo."
+}
